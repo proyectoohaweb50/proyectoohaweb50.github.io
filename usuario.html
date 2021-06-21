@@ -5,7 +5,7 @@
   <meta name="viewport"
     content="width=device-width,
        initial-scale=1.0">
-  <title>Alumno</title>
+  <title>Usuario</title>
   <script
     src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js">
     </script>
@@ -15,6 +15,9 @@
   <script
     src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js">
     </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js">
+    </script>
   <script src="js/init.js">
   </script>
   <script type="module"
@@ -23,6 +26,9 @@
   <script type="module"
     src="cmp/mi-footer.js">
     </script>
+  <script type="module"
+    src="cmp/mi-progreso.js">
+    </script>
   <link rel="stylesheet"
     href="css/estilos.css">
 </head>
@@ -30,9 +36,15 @@
   <form name="forma">
     <mi-nav></mi-nav>
     <header>
-      <h1>Alumno</h1>
+      <h1>
+        <output name="cue">
+          Usuario
+          <mi-progreso>
+          </mi-progreso>
+        </output>
+      </h1>
       <div class="herramientas">
-        <a href="alumnos.html">
+        <a href="usuarios.html">
           Cancelar</a>
         <button>Guardar</button>
         <button name="eliminar"
@@ -41,44 +53,49 @@
         </button>
       </div>
     </header>
+    <figure id="figure">
+      <img alt="Falta el Avatar">
+    </figure>
     <p>
       <label>
-        Matricula
-        <input name="matricula"
-          type="text" required>
+        Avatar
+        <input name="avatar"
+          type="file"
+          accept=".png,.jpg,.jpeg,.gif">
       </label>
     </p>
+    <!--
+      Maneja una asociación a uno.
+    -->
     <p>
       <label>
-        Nombre
-        <input name="nombre"
-          type="text" required>
+        Pasatiempo
+        <select
+          name="pasatiempoId">
+          <option>
+            Cargando…
+          </option>
+        </select>
       </label>
     </p>
-    <p>
-      <label>
-        Teléfono
-        <input name="telefono"
-          type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Grupo
-        <input name="grupo"
-          type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Fecha
-        <input name="fecha" type="date" required>
-      </label>
-    </p>
+    <!--
+      Maneja una asociación a
+      muchos.
+    -->
+    <fieldset>
+      <legend>Roles</legend>
+      <ul id="listaRoles"
+        class="checks">
+        <li>
+          <mi-progreso>
+          </mi-progreso>
+        </li>
+      </ul>
+    </fieldset>
     <mi-footer></mi-footer>
   </form>
   <script type="module"
-    src="js/CtrlAlumno.js">
+    src="js/CtrlUsuario.js">
     </script>
 </body>
 </html>
