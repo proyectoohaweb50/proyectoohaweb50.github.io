@@ -47,7 +47,7 @@ import {
           html += /* html */
             `<li>
               <a href=
-  "alumnos.html">Alumnos</a>
+  "alumnos.html">Repartidores</a>
             </li>`;
         }
         this.ul.innerHTML += html;
