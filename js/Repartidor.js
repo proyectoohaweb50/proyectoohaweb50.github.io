@@ -7,13 +7,13 @@ import {
     muestraError
   } from "../lib/util.js";
   import {
-    muestraAlumnos
+    muestraRepartidors
   } from "./navegacion.js";
   import {
     tieneRol
   } from "./seguridad.js";
   
-  const daoAlumno =
+  const daoRepartidor =
     getFirestore().
       collection("Repartidor");
   const params =
@@ -109,7 +109,7 @@ import {
         await daoRepartidor.
           doc(id).
           delete();
-        muestraRepartidores();
+        muestraRepartidors();
       }
     } catch (e) {
       muestraError(e);
