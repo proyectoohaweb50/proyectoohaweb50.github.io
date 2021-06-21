@@ -39,7 +39,7 @@ import {
       const formData =
         new FormData(forma);
       const clave = getString(
-          formData, "clave").trim();  /** clave = matricula*/
+          formData, "clave").trim();   
       const nombre = getString(formData, "nombre").trim();
       const telefono = getString(formData, "telefono").trim();
       const triciclo = getString(formData, "triciclo").trim();  
