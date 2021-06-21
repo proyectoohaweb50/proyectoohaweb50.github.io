@@ -77,7 +77,7 @@ import {
       const formData =
         new FormData(forma);
       const clave = getString(
-          formData, "matricula").trim();  
+          formData, "clave").trim();  
       const nombre = getString(formData, "nombre").trim();
       const telefono = getString(formData, "telefono").trim();
       const triciclo = getString(formData, "triciclo").trim();
@@ -109,7 +109,7 @@ import {
         await daoRepartidor.
           doc(id).
           delete();
-        muestraRepartidors();
+        muestraRepartidores();
       }
     } catch (e) {
       muestraError(e);
