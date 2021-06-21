@@ -50,8 +50,7 @@ import {
     } else {
       html += /* html */
         `<li class="vacio">
-          -- No hay alumnos
-          registrados. --
+          -- No hay reparidores registrados --
         </li>`;
     }
     lista.innerHTML = html;
